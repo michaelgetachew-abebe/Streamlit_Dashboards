@@ -8,7 +8,7 @@ st.header("GOOGLE STOCK PRICE FROM 2011-7-31 TO 2021-12-29")
 st.write("""
 # Stock Price Appp
 
-Shown are the stock closing price and volume of Google!!! 
+Shown are the stock **closing price** and **volume** of Google!!! 
 
 """)
 #define a ticker symbol
