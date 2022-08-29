@@ -19,4 +19,5 @@ tickerData = yf.Ticker(tickerSymbol)
 ticker_df = tickerData.history(period="1d", start="2011-7-31", end = '2021-12-29')
 
 st.line_chart(ticker_df.Close)
-st.line_Chart(ticker_df.Volume)
+
+st.line_chart(ticker_df.Volume)
