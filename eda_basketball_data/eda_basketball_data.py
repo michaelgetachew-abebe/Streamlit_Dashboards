@@ -9,7 +9,7 @@ import seaborn as sns
 import numpy as sns
 
 # Header sections of the dashboard
-image = Image.open('nba-logo.jpg')
+image = Image.open('bryant-logo.webp')
 
 st.title("NBA DASHBOARD")
 st.image(image, use_column_width = True)
