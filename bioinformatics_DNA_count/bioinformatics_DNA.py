@@ -36,7 +36,7 @@ st.header("INPUT")
 input_sequence
 
 st.header("OUTPUT")
-st.subheader("1. Print Dictionary")
+st.subheader("Print Dictionary")
 
 def DNA_nucleotide_count(seq):
   i = dict([
@@ -53,7 +53,7 @@ st.write(nucleotide_count)
 
 # Print a textual result of the nucleotide count
 
-st.subheader("2, Print text")
+st.subheader("Print Info")
 A_count = f"There are {nucleotide_count['A']} adenine(A)"
 T_count = f"There are {nucleotide_count['T']} thymine(T)"
 G_count = f"There are {nucleotide_count['G']} guanine(G)"
@@ -64,4 +64,18 @@ st.write(G_count)
 st.write(C_count)
 
 # Display the dataframe
+st.subheader("Data Frame")
+dna_df = pd.DataFrame.from_dict(nucleotide_count, orient = 'index')
+dna_df = dna_df.rename({0: 'count'}, axis = 'columns')
+dna_df.reset_index(inplace = True)
+dna_df = dna_df.rename(columns = {"index":"nucleotide"})
+st.write(dna_df)
 
+#Display a bar chart
+
+st.subheader("Display Bar Chart")
+bar_chart = alt.Chart(dna_df).mark_bar().encode(x= 'nucleotide', y= 'count')
+
+bar_chart = bar_chart.properties(width = alt.Step(170))
+
+st.write(bar_chart)
