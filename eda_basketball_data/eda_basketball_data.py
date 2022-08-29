@@ -8,5 +8,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as sns
 
+# Header sections of the dashboard
+image = Image.open('nba-logo.jpg')
 
-
+st.title("NBA DASHBOARD")
+st.image(image, use_column_width = True)
