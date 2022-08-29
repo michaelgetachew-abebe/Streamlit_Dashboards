@@ -3,8 +3,8 @@ import yfinance as yf
 import streamlit as st
 import pandas as pd
 
-st.title("STOCK PRICE App")
-st.header("GOOGLE")
+st.title("Stock Price App")
+st.header("GOOGLE STOCK PRICE FROM 2011-7-31 TO 2021-12-29")
 st.write("""
 # Stock Price Appp
 
