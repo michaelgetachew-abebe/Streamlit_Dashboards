@@ -6,7 +6,7 @@ import base64
 from PIL import Image
 import matplotlib.pyplot as plt
 import seaborn as sns
-import numpy as sns
+import numpy as np
 
 # Header sections of the dashboard
 image = Image.open('bryant-logo.webp')
