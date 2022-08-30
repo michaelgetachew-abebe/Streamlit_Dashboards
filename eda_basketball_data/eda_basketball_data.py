@@ -12,4 +12,10 @@ import numpy as sns
 image = Image.open('bryant-logo.webp')
 
 st.title("NBA DASHBOARD")
+st.subheader("NBA PLAYER STATS EXPLORER")
 st.image(image, use_column_width = True)
+
+st.markdown("""
+This app performs simple webscrapping of NBA player stat dataset
+* **Data Source:** [Basketball-reference.com](https://www.basketball-reference.com/).
+""")
