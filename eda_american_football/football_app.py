@@ -20,7 +20,7 @@ This app performs simple webscraping of NFL Football stats
 st.sidebar.header("User Input Features")
 
 stat_type = ['Passing', 'Rushing', 'Receiving', 'Defense', 'Scoring']
-st.sidebar.selectbox('Stat Type')
+stat = st.sidebar.selectbox('Stat Type')
 # Sidebar - Year selection
 selected_year = st.sidebar.selectbox("Year", range(2000,2022))
 
@@ -49,7 +49,7 @@ selected_pos = st.sidebar.multiselect('Position', sorted_unique_position, sorted
 selected_data_frame = player_stats[(player_stats.Tm.isin(selected_team)) & (player_stats.Pos.isin(selected_pos))]
 
 st.header('Player Satats of Selected Team(s)')
-st.write('Data Dimension: ' + str(selected_data_frame.shape[0] + ' rows and ' + str(selecte_data_frame.shape[1]) + ' columns.'))
+st.write('Data Dimension: ' + str(selected_data_frame.shape[0] + ' rows and ' + str(selected_data_frame.shape[1]) + ' columns.'))
 st.dataframe(selected_data_frame)
 
 def filedownloader(df):
