@@ -10,7 +10,7 @@ from PIL import Image
 
 image = Image.open('logo.jpg')
 st.title("NFL DASHBOARD")
-st.subheader("NFL Football Stats (Rushing) Explorer")
+st.subheader("NFL Football Stats Explorer")
 st.image(image, use_column_width=True)
 
 st.markdown('''
@@ -19,6 +19,8 @@ This app performs simple webscraping of NFL Football stats
 
 st.sidebar.header("User Input Features")
 
+stat_type = ['Passing', 'Rushing', 'Receiving', 'Defense', 'Scoring']
+st.sidebar.selectbox('Stat Type')
 # Sidebar - Year selection
 selected_year = st.sidebar.selectbox("Year", range(2000,2022))
 
