@@ -14,15 +14,18 @@ st.subheader("NFL Football Stats Explorer")
 st.image(image, use_column_width=True)
 
 st.markdown('''
-This app performs simple webscraping of NFL Football stats 
+This app performs simple webscraping of NFL Football player stats data (focusing on Rushing)!
+* **Python libraries:** base64, pandas, streamlit, numpy, matplotlib, seaborn
+* **Data source:** [pro-football-reference.com](https://www.pro-football-reference.com/).
+""" 
 ''')
 
 st.sidebar.header("User Input Features")
 
 stat_type = ['Passing', 'Rushing', 'Receiving', 'Defense', 'Scoring']
-stat = st.sidebar.selectbox('Stat Type')
+stat = st.sidebar.selectbox('Stat Type', list(stat_type))
 # Sidebar - Year selection
-selected_year = st.sidebar.selectbox("Year", range(2000,2022))
+selected_year = st.sidebar.selectbox("Year", list(reversed(range(2000,2022))))
 
 # Function that performs the necessary Web Scraping of NFL player stats
 # https://www.pro-football-reference.com/years/2019/rushing.htm
