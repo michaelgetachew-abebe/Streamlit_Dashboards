@@ -47,7 +47,7 @@ selected_position = st.sidebar.multiselect('Position', position_list, position_l
 #Data Filtering
 df_selected_team = playerstats[(playerstats.Tm.isin(selected_team)) & (playerstats.Pos.isin(selected_position))]
 st.header('Display PLayer Stats of Selectd Team(s)')
-st.write('Data Dimensions: ' + str(df_selected_team.shape[0]) + 'rows and ' + str(df_selected_team.shape[1]))
+st.write('Data Dimensions: ' + str(df_selected_team.shape[0]) + ' rows and ' + str(df_selected_team.shape[1]))
 st.dataframe(df_selected_team)
 
 def filedownload(df):
