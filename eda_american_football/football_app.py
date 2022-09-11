@@ -22,7 +22,7 @@ This app performs simple webscraping of NFL Football player stats data (focusing
 
 st.sidebar.header("User Input Features")
 
-stat_type = ['Passing', 'Rushing', 'Receiving', 'Defense', 'Scoring']
+stat_type = ['passing', 'rushing', 'receiving', 'defense', 'scoring']
 stat = st.sidebar.selectbox('Stat Type', list(stat_type))
 # Sidebar - Year selection
 selected_year = st.sidebar.selectbox("Year", list(reversed(range(2000,2022))))
@@ -34,10 +34,7 @@ def data_loader(year, stat_type):
     url = f"https://www.pro-football-reference.com/years/{str(year)}/{stat_type}.htm"
     html = pd.read_html(url, header=1)
     df = html[0]
-    raw = df.drop(df[df.Age == 'Age'].index)
-    raw = raw.fillna(0)
-    player_stats = raw.drop(['Rk'], axis = 1)
-    return player_stats
+    return df
 
 player_stats = data_loader(selected_year, stat)
 
