@@ -31,7 +31,7 @@ selected_year = st.sidebar.selectbox("Year", list(reversed(range(2000,2022))))
 # https://www.pro-football-reference.com/years/2019/rushing.htm
 @st.cache
 def data_loader(year, stat_type):
-    url = "https://www.pro-football-reference.com/years/" + str(year) + "/" + str(stat_type) + ".htm"
+    url = f"https://www.pro-football-reference.com/years/{str(year)}/{stat_type}.htm"
     html = pd.read_html(url, header=1)
     df = html[0]
     raw = df.drop(df[df.Age == 'Age'].index)
